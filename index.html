@@ -1,0 +1,296 @@
+<!---
+Author: Mario Posada
+Author URI: 
+Description: Carrito de compras para el curso de JavaScript en Coderhouse
+Version: 1.0.0
+License: GNU General Public License v2 or later
+
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Html general de la App
+# Aside oculto para luego renderizar el carrito
+# Seccion principal de la tienda
+
+----------------------------------------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------- html general de la App ------------------------------*/
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tercera entrega</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="hamb">
+        <i class="bx bx-menu bx-lg"></i>
+      </div>
+      <div class="logo">
+        <img
+          src="./img/golf-store.png"
+          alt="GolfStore"
+          width="100"
+          height="50"
+        />
+      </div>
+
+      <input
+        id="searchbar"
+        type="text"
+        name="search"
+        placeholder="Buscar productos.."
+        class="search"
+      />
+
+      <div class="content-cart">
+        <i class="bx bx-cart-alt bx-md cart"></i>
+        <div class="content-items-cart">
+          <span class="items-cart" id="items-cart">0</span>
+        </div>
+      </div>
+    </header>
+    <section class="opciones">
+      <ul class="menu">
+        <li><a class="active" href="#openModal">Accesorios</a></li>
+        <li><a href="#openModal">Bolsas</a></li>
+        <li><a href="#openModal">Carros</a></li>
+        <li><a href="#openModal">Guantes</a></li>
+        <li><a href="#openModal">Indumentaria</a></li>
+        <li><a href="#openModal">Palos y Sets</a></li>
+        <li><a href="#openModal">Pelotas</a></li>
+      </ul>
+    </section>
+    <div class="contenedor">
+      <div class="slider-contenedor">
+        <section class="contenido-slider">
+          <img src="/img/slider/5.jpg" alt="" />
+        </section>
+        <section class="contenido-slider">
+          <img src="/img/slider/2.jpg" alt="" />
+        </section>
+        <section class="contenido-slider">
+          <img src="/img/slider/7.jpg" alt="" />
+        </section>
+        <section class="contenido-slider">
+          <img src="/img/slider/8.jpg" alt="" />
+        </section>
+      </div>
+    </div>
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- ASIDE OCULTO PARA LUEGO RENDERIZAR EL CARRITO -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+
+    <aside class="panel" id="panel">
+      <h2 class="cartTitle">Carrito</h2>
+      <ul class="cards1" id="cards1">
+        <!-------template------>
+        <!-- <template id="template_carrito">
+          <li class="cards_item1" id="cards_item1">
+            <div class="card_image1">
+              <img class="img1" />
+            </div>
+            <div class="card_content1" id="card_content1">
+              <h2 class="card_title1" id="card_title1"></h2>
+              <p class="card_tex1t" id="card_text1"></p>
+              <button class="card_button1" type="button">X</button>
+              
+            </div>
+          </li>
+        </template> -->
+        <!-------template------>
+      </ul>
+    </aside>
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- SIDEBAR DEL MENU LATERAL--------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+    <!-------------------- --------------------------------------------- -------------------->
+
+    <nav class="sidebar">
+      <!-------------------- --------------------------------------------- -------------------->
+      <!-------------------- --------------- HEADER ---------------------- -------------------->
+      <!-------------------- --------------------------------------------- -------------------->
+      <header>
+        <div class="image-text">
+          <div class="text logo-text">
+            <span class="name">GolfStore</span>
+            <span class="profession">Tienda de Golf</span>
+          </div>
+          <span class="imagex">
+            <i class='bx bx-left-arrow-alt bx-lg'></i>
+          </span>
+        </div>
+      </header>
+      <!-------------------- --------------------------------------------- -------------------->
+
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                <span class="text nav-text">Revenue</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-bell icon"></i>
+                <span class="text nav-text">Notifications</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-pie-chart-alt icon"></i>
+                <span class="text nav-text">Analytics</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-heart icon"></i>
+                <span class="text nav-text">Likes</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-wallet icon"></i>
+                <span class="text nav-text">Wallets</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!------------------- Seccion principal de la tienda -------------------->
+    <main class="items" id="items">
+      <h2 class="basado">Basado en tu última visita</h2>
+      <ul class="cards" id="cards">
+        <!-------template------>
+        <template id="template_productos">
+          <li class="cards_item" id="cards_item">
+            <div class="card">
+              <div class="card_image">
+                <img class="imag" />
+              </div>
+              <div class="card_content" id="card_content">
+                <h2 class="card_title" id="card_title"></h2>
+                <p class="card_tex" id="card_text"></p>
+                <button class="card_button" id="card_button" type="button">
+                  Agregar al carrito
+                </button>
+              </div>
+            </div>
+          </li>
+        </template>
+
+        <!-------template------>
+      </ul>
+    </main>
+    <aside class="relleno"></aside>
+    <aside class="relleno1"></aside>
+    <footer class="footer">
+      <h2 class="siguenos">SIGUENOS</h2>
+      <div class="content-nav">
+        <ul class="menu-footer">
+          <li class="nav-link">
+            <a href="#">
+              <i class="bx bxl-instagram bx-lg"></i>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#">
+              <i class="bx bxl-twitter bx-lg"></i>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#">
+              <i class="bx bxl-facebook bx-lg"></i>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#">
+              <i class="bx bxl-tiktok bx-lg"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div><span class="dev">Desarrollado por</span><span class="autor">Mario Posada</span></div>
+    </footer>
+  <!-------------------- --------------------------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+  <!-------------------- ---------- MODAL----------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+    <div id="openModal" class="modalDialog">
+      <div class="modal">
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Simulador Interactivo E-COMMERCE</h2>
+        <p>Gracias por utilizar el simulador de compra</p>
+        <p>No es una solución completa, pero prentende serlo en el futuro!</p>
+        <br>
+        <p>Gracias Wen y Fernando!! Disfrute el curso realmente!</p>
+        <p>Abrazo grande!!!</p>
+      </div>
+    </div>
+  </body>
+
+  <!-------------------- ---------------------------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+  <!-------------------- ---------- SCRIPTS--------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+  <!-------------------- --------------------------------------------- -------------------->
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/renderizado.js"></script>
+  <script src="./js/DOM.js"></script>
+  <script src="./js/script.js"></script>
+</html>
