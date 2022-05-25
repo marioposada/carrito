@@ -136,7 +136,7 @@ function renderizarProductos() {
         fragmentProductos = document.createDocumentFragment();
 
 
-    fetch("http://localhost:5500/datos.json")
+    fetch("https://api.jsonbin.io/b/628d79fd402a5b38020c2b3a")
         .then((res) => res.json())
         .then((data) => {
             datos = data;
