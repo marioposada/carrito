@@ -166,7 +166,7 @@ function eraser(button1) {
 
 // Fetching del JSON desde localhost
 async function fetchData() {
-    const response = await fetch("http://localhost:5500/datos.json")
+    const response = await fetch("https://api.jsonbin.io/b/628d79fd402a5b38020c2b3a")
     const data = await response.json();
     return data;
 }
