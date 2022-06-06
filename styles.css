@@ -66,6 +66,8 @@ body {
 }
 
 .header {
+  position: fixed;
+  top: 0;
   grid-area: head;
   display: flex;
   justify-content: space-evenly;
